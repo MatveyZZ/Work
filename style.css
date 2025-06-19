@@ -120,7 +120,8 @@ a:hover::after {
 .section-heading {
   font-size: 3rem; /* Размер шрифта заголовка */
   color: var(--primary); /* Цвет заголовка */
-  padding: 2rem 0; /* Вертикальные отступы */
+  padding: 1rem; /* Вертикальные отступы */
+  text-align: left; /* Выравнивание текста влево */
 }
 
 /* Стили для секции слайдера */
