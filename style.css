@@ -1,0 +1,306 @@
+/* Импорт шрифта Montserrat из Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+/* Сброс стилей для всех элементов, псевдоэлементов и псевдоклассов */
+*,
+*::before,
+*::after {
+  margin: 0; /* Убираем отступы */
+  padding: 0; /* Убираем внутренние отступы */
+  box-sizing: border-box; /* Устанавливаем box-sizing для более предсказуемого поведения */
+  list-style-type: none; /* Убираем маркеры списков */
+  text-decoration: none; /* Убираем подчеркивание у ссылок */
+}
+
+/* Определение переменных CSS */
+:root {
+  --primary: #ec994b; /* Основной цвет */
+  --white: #ffffff; /* Белый цвет */
+  --bg: #f5f5f5; /* Цвет фона */
+}
+
+/* Установка базовых стилей для html */
+html {
+  font-size: 62.5%; /* Установка базового размера шрифта (10px = 1rem) */
+  font-family: "Montserrat", sans-serif; /* Установка шрифта */
+  scroll-behavior: smooth; /* Плавная прокрутка */
+}
+
+/* Медиа-запрос для увеличения масштаба на больших экранах */
+@media (min-width: 1440px) {
+  html {
+    zoom: 1.5; /* Увеличение масштаба */
+  }
+}
+
+/* Медиа-запрос для увеличения масштаба на очень больших экранах */
+@media (min-width: 2560px) {
+  html {
+    zoom: 1.7; /* Увеличение масштаба */
+  }
+}
+
+/* Медиа-запрос для увеличения масштаба на экранах 3860px и больше */
+@media (min-width: 3860px) {
+  html {
+    zoom: 2.5; /* Увеличение масштаба */
+  }
+}
+
+/* Стили для полосы прокрутки в WebKit-браузерах */
+::-webkit-scrollbar {
+  width: 1.3rem; /* Ширина полосы прокрутки */
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1rem; /* Закругление углов ползунка */
+  background: #797979; /* Цвет ползунка */
+  transition: all 0.5s ease-in-out; /* Плавный переход для изменения цвета */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #222224; /* Цвет ползунка при наведении */
+}
+
+::-webkit-scrollbar-track {
+  background: #f9f9f9; /* Цвет фона полосы прокрутки */
+}
+
+/* Основные стили для body */
+body {
+  font-size: 1.6rem; /* Размер шрифта для body */
+  background: var(--bg); /* Фоновый цвет */
+}
+
+/* Контейнер с максимальной шириной и отступами */
+.container {
+  max-width: 124rem; /* Максимальная ширина контейнера */
+  padding: 0 1rem; /* Горизонтальные отступы */
+  margin: 0 auto; /* Центрирование контейнера */
+}
+
+/* Стили для ссылок */
+a {
+  position: relative; /* Относительное позиционирование для псевдоэлементов */
+  display: block; /* Отображение ссылки как блочного элемента */
+  font-size: 1.1em; /* Размер шрифта для ссылки */
+  color: rgb(0, 0, 0); /* Цвет текста ссылки */
+  text-decoration: none; /* Убираем подчеркивание */
+  font-weight: 500; /* Жирность шрифта */
+  float: right; /* Выравнивание ссылки вправо */
+  margin-top: 20px; /* Отступ сверху */
+  margin-right: 20px; /* Отступ справа */
+}
+
+/* Псевдоэлемент для создания эффекта подчеркивания при наведении */
+a::after {
+  content: ''; /* Пустое содержимое для псевдоэлемента */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 0; /* Сдвиг влево */
+  bottom: -6px; /* Сдвиг вниз */
+  width: 100%; /* Ширина равна ширине ссылки */
+  height: 3px; /* Высота подчеркивания */
+  background: rgb(0, 0, 0); /* Цвет подчеркивания */
+  border-radius: 5px; /* Закругление углов подчеркивания */
+  transform: scaleX(0); /* Начальное состояние: скрыто */
+  transition: transform .5s; /* Плавный переход для эффекта подчеркивания */
+}
+
+/* Эффект подчеркивания при наведении на ссылку */
+a:hover::after {
+  transform: scaleX(1); /* Показываем подчеркивание при наведении */
+}
+
+/* Центрирование текста */
+.text-center {
+  text-align: center; /* Выравнивание текста по центру */
+}
+
+/* Заголовок секции */
+.section-heading {
+  font-size: 3rem; /* Размер шрифта заголовка */
+  color: var(--primary); /* Цвет заголовка */
+  padding: 2rem 0; /* Вертикальные отступы */
+}
+
+/* Стили для секции слайдера */
+#tranding {
+  padding: 4rem 0; /* Вертикальные отступы для секции */
+}
+
+/* Медиа-запрос для изменения отступов в секции на экранах меньше 1440px */
+@media (max-width:1440px) {
+  #tranding {
+    padding: 7rem 0; /* Увеличение вертикальных отступов */
+  }
+}
+
+/* Стили для слайдера в секции */
+#tranding .tranding-slider {
+  height: 52rem; /* Высота слайдера */
+  padding: 2rem 0; /* Вертикальные отступы */
+  position: relative; /* Относительное позиционирование для вложенных элементов */
+}
+
+/* Медиа-запрос для изменения высоты слайдера на экранах меньше 500px */
+@media (max-width:500px) {
+  #tranding .tranding-slider {
+    height: 45rem; /* Уменьшение высоты слайдера */
+  }
+}
+
+/* Стили для отдельных слайдов */
+.tranding-slide {
+  width: 37rem; /* Ширина слайда */
+  height: 42rem; /* Высота слайда */
+  position: relative; /* Относительное позиционирование для вложенных элементов */
+}
+
+/* Медиа-запрос для изменения размеров слайдов на экранах меньше 500px */
+@media (max-width:500px) {
+  .tranding-slide {
+    width: 28rem !important; /* Уменьшение ширины слайда */
+    height: 36rem !important; /* Уменьшение высоты слайда */
+  }
+  .tranding-slide .tranding-slide-img img {
+    width: 28rem !important; /* Уменьшение ширины изображения */
+    height: 36rem !important; /* Уменьшение высоты изображения */
+  }
+}
+
+/* Стили для изображений в слайде */
+.tranding-slide .tranding-slide-img img {
+  width: 37rem; /* Ширина изображения */
+  height: 42rem; /* Высота изображения */
+  border-radius: 2rem; /* Закругление углов изображения */
+  object-fit: cover; /* Обеспечение сохранения пропорций изображения */
+}
+
+/* Стили для содержимого слайда */
+.tranding-slide .tranding-slide-content {
+  position: absolute; /* Абсолютное позиционирование для заполнения слайда */
+  left: 0; /* Сдвиг влево */
+  top: 0; /* Сдвиг вверх */
+  right: 0; /* Сдвиг вправо */
+  bottom: 0; /* Сдвиг вниз */
+}
+
+/* Стили для цены еды в слайде */
+.tranding-slide-content .food-price {
+  position: absolute; /* Абсолютное позиционирование для размещения цены */
+  top: 2rem; /* Сдвиг сверху */
+  right: 2rem; /* Сдвиг вправо */
+  color: var(--white); /* Цвет текста цены */
+}
+
+/* Стили для нижней части содержимого слайда */
+.tranding-slide-content .tranding-slide-content-bottom {
+  position: absolute; /* Абсолютное позиционирование для размещения текста */
+  bottom: 2rem; /* Сдвиг вниз */
+  left: 2rem; /* Сдвиг влево */
+  color: var(--white); /* Цвет текста */
+}
+
+/* Стили для рейтинга еды */
+.food-rating {
+  padding-top: 1rem; /* Отступ сверху */
+  display: flex; /* Flex-контейнер для выравнивания элементов */
+  gap: 1rem; /* Промежуток между элементами */
+}
+
+/* Цвет иконок рейтинга */
+.rating ion-icon {
+  color: var(--primary); /* Цвет иконок рейтинга */
+}
+
+/* Скрытие теней слайдов */
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right {
+  display: none; /* Скрываем тени слайдов */
+}
+
+/* Стили для элементов управления слайдером */
+.tranding-slider-control {
+  position: relative; /* Относительное позиционирование для размещения элементов управления */
+  bottom: 2rem; /* Сдвиг вниз */
+  display: flex; /* Flex-контейнер для выравнивания элементов */
+  align-items: center; /* Вертикальное выравнивание по центру */
+  justify-content: center; /* Горизонтальное выравнивание по центру */
+}
+
+/* Позиционирование кнопки "Следующий слайд" */
+.tranding-slider-control .swiper-button-next {
+  left: 58% !important; /* Сдвиг влево */
+  transform: translateX(-58%) !important; /* Центрирование кнопки */
+}
+
+/* Медиа-запрос для изменения позиции кнопки "Следующий слайд" на экранах меньше 990px */
+@media (max-width:990px) {
+  .tranding-slider-control .swiper-button-next {
+    left: 70% !important; /* Сдвиг влево */
+    transform: translateX(-70%) !important; /* Центрирование кнопки */
+  }
+}
+
+/* Медиа-запрос для изменения позиции кнопки "Следующий слайд" на экранах меньше 450px */
+@media (max-width:450px) {
+  .tranding-slider-control .swiper-button-next {
+    left: 80% !important; /* Сдвиг влево */
+    transform: translateX(-80%) !important; /* Центрирование кнопки */
+  }
+}
+
+/* Позиционирование кнопки "Предыдущий слайд" */
+@media (max-width:990px) {
+  .tranding-slider-control .swiper-button-prev {
+    left: 30% !important; /* Сдвиг влево */
+    transform: translateX(-30%) !important; /* Центрирование кнопки */
+  }
+}
+
+/* Медиа-запрос для изменения позиции кнопки "Предыдущий слайд" на экранах меньше 450px */
+@media (max-width:450px) {
+  .tranding-slider-control .swiper-button-prev {
+    left: 20% !important; /* Сдвиг влево */
+    transform: translateX(-20%) !important; /* Центрирование кнопки */
+  }
+}
+
+/* Стили для кнопок управления слайдером */
+.tranding-slider-control .slider-arrow {
+  background: var(--white); /* Фоновый цвет кнопки */
+  width: 3.5rem; /* Ширина кнопки */
+  height: 3.5rem; /* Высота кнопки */
+  border-radius: 50%; /* Закругление углов кнопки */
+  left: 42%; /* Сдвиг влево */
+  transform: translateX(-42%); /* Центрирование кнопки */
+  filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1)); /* Тень для кнопки */
+}
+
+/* Стили для иконок в кнопках управления слайдером */
+.tranding-slider-control .slider-arrow ion-icon {
+  font-size: 2rem; /* Размер иконки */
+  color: #222224; /* Цвет иконки */
+}
+
+/* Псевдоэлемент для кнопок управления (пустой) */
+.tranding-slider-control .slider-arrow::after {
+  content: ''; /* Пустое содержимое для псевдоэлемента */
+}
+
+/* Стили для пагинации слайдера */
+.tranding-slider-control .swiper-pagination {
+  position: relative; /* Относительное позиционирование для пагинации */
+  width: 15rem; /* Ширина пагинации */
+  bottom: 1rem; /* Сдвиг вниз */
+}
+
+/* Стили для пульсирующих точек пагинации */
+.tranding-slider-control .swiper-pagination .swiper-pagination-bullet {
+  filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1)); /* Тень для точек пагинации */
+}
+
+/* Стили для активной точки пагинации */
+.tranding-slider-control .swiper-pagination .swiper-pagination-bullet-active {
+  background: var(--primary); /* Цвет активной точки */
+}
